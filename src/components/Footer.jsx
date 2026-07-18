@@ -1,15 +1,12 @@
 import { Link } from 'react-router-dom'
+import Logo from './Logo'
 
 export default function Footer() {
   return (
     <footer className="border-t border-nova-border bg-nova-night">
       <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-5 py-8 sm:flex-row sm:px-8">
-        <div className="flex items-center gap-2.5 text-white">
-          <span
-            className="h-7 w-7 rounded-lg bg-gradient-to-br from-nova-blue to-nova-green"
-            aria-hidden="true"
-          />
-          <span className="text-sm font-semibold tracking-tight">NOVAGENESIS</span>
+        <div className="flex items-center text-white">
+          <Logo imgClass="h-8 w-auto" squareClass="h-7 w-7" />
         </div>
 
         <p className="text-center text-xs text-nova-muted">

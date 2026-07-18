@@ -8,16 +8,16 @@ const founders = [
     initials: 'GP',
   },
   {
+    name: 'Irene Serra',
+    role: 'Advisor',
+    photo: '/team/irene-serra.jpg',
+    initials: 'IS',
+  },
+  {
     name: 'Andrea Giardini',
     role: 'Co-founder, CEO',
     photo: '/team/andrea-giardini.jpg',
     initials: 'AG',
-  },
-  {
-    name: 'Irene Serra',
-    role: 'Co-founder, CBO',
-    photo: '/team/irene-serra.jpg',
-    initials: 'IS',
   },
 ]
 

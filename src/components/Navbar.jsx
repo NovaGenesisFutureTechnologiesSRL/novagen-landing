@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Menu, X } from 'lucide-react'
+import Logo from './Logo'
 
 const links = [
   { label: 'Tecnologia', href: '#tecnologia' },
@@ -16,13 +17,9 @@ export default function Navbar() {
         className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 sm:px-8"
         aria-label="Navigazione principale"
       >
-        {/* Logo con quadratino gradient blu -> verde */}
-        <a href="#hero" className="flex items-center gap-2.5 text-white">
-          <span
-            className="h-8 w-8 rounded-lg bg-gradient-to-br from-nova-blue to-nova-green shadow-[0_0_18px_rgba(46,230,166,0.35)]"
-            aria-hidden="true"
-          />
-          <span className="text-lg font-semibold tracking-tight">NOVAGENESIS</span>
+        {/* Logo NovaGenesis (immagine con fallback) */}
+        <a href="#hero" className="flex items-center text-white" aria-label="NovaGenesis, vai in cima">
+          <Logo />
         </a>
 
         {/* Link desktop */}

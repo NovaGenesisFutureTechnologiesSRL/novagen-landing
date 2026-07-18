@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import Footer from './Footer'
+import Logo from './Logo'
 
 export default function LegalLayout({ title, updated, children }) {
   return (
@@ -7,12 +8,8 @@ export default function LegalLayout({ title, updated, children }) {
       {/* Navbar semplificata: solo logo che torna alla home */}
       <header className="sticky top-0 z-40 border-b border-nova-border bg-nova-night/80 backdrop-blur-md">
         <div className="mx-auto flex max-w-7xl items-center px-5 py-4 sm:px-8">
-          <Link to="/" className="flex items-center gap-2.5 text-white" aria-label="Torna alla home NovaGenesis">
-            <span
-              className="h-8 w-8 rounded-lg bg-gradient-to-br from-nova-blue to-nova-green shadow-[0_0_18px_rgba(46,230,166,0.35)]"
-              aria-hidden="true"
-            />
-            <span className="text-lg font-semibold tracking-tight">NOVAGENESIS</span>
+          <Link to="/" className="flex items-center text-white" aria-label="Torna alla home NovaGenesis">
+            <Logo />
           </Link>
         </div>
       </header>
