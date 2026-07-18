@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "loopPatterns": {
+    "53667f8b": {
+      "preview": "Bash({\"command\":\"cat > \\\"src/components/ContactModal.jsx\\\" << 'EO)",
+      "count": 1,
+      "lastSeen": 1784377515994
+    },
+    "863a76ba": {
+      "preview": "PowerShell({\"command\":\"git init -b main 2>&1\\nif (-not (git config user)",
+      "count": 1,
+      "lastSeen": 1784377594429
+    }
+  },
+  "editErrors": {}
+}

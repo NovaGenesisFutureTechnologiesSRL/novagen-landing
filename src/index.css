@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+/* ============================================================
+   Novagenesis Future Technologies — brand palette
+   Blu elettrico #3b5bff su blu notte #0a0e1a
+   ============================================================ */
+:root {
+  --nova-electric: #3b5bff;   /* blu elettrico brand */
+  --nova-electric-2: #5b7bff; /* variante chiara */
+  --nova-night: #0a0e1a;      /* blu notte / sfondo dark */
+  --nova-night-2: #0f1424;    /* superfici scure */
+  --nova-panel: #131a2e;      /* card scure */
+  --nova-border: #1e2740;     /* bordi sottili dark */
+  --nova-light: #f6f8ff;      /* sfondo chiaro sezioni */
+  --nova-ink: #0a0e1a;        /* testo scuro su chiaro */
+  --nova-muted: #8a93a8;      /* testo secondario */
+}
+
+/* Rende disponibili i colori brand come utility Tailwind v4 */
+@theme {
+  --color-nova-electric: #3b5bff;
+  --color-nova-electric-2: #5b7bff;
+  --color-nova-night: #0a0e1a;
+  --color-nova-night-2: #0f1424;
+  --color-nova-panel: #131a2e;
+  --color-nova-border: #1e2740;
+  --color-nova-light: #f6f8ff;
+  --color-nova-ink: #0a0e1a;
+  --color-nova-muted: #8a93a8;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--nova-night);
+  color: #c7cede;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Focus visibile e accessibile su tutta la pagina */
+:focus-visible {
+  outline: 2px solid var(--nova-electric-2);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
