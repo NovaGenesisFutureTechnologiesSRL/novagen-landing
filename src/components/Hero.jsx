@@ -1,6 +1,6 @@
 const stats = [
-  { label: 'Cost Efficient', value: '~36%', desc: 'più economico dei sistemi attuali' },
-  { label: 'High durability', value: 'PGM-free', desc: 'Polimero innovativo' },
+  { label: 'Cost Efficient', value: '', desc: 'più economico dei sistemi attuali' },
+  { label: 'High durability', value: '', desc: 'Polimero innovativo high resistance' },
   { label: 'PFAS-free', value: '', desc: 'senza fluoro' },
 ]
 

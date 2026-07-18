@@ -44,7 +44,7 @@ export default function Navbar() {
             href="#contatti"
             className="hidden rounded-lg bg-nova-green px-4 py-2 text-sm font-semibold text-nova-night shadow-[0_0_20px_rgba(46,230,166,0.35)] transition-colors hover:bg-nova-green-2 md:inline-flex"
           >
-            Parla con noi
+            Contattaci
           </a>
 
           {/* Toggle mobile */}
@@ -81,7 +81,7 @@ export default function Navbar() {
                 onClick={() => setOpen(false)}
                 className="mt-2 block w-full rounded-lg bg-nova-green px-4 py-2 text-center text-sm font-semibold text-nova-night hover:bg-nova-green-2"
               >
-                Parla con noi
+                Contattaci
               </a>
             </li>
           </ul>
