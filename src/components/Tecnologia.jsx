@@ -36,9 +36,9 @@ export default function Tecnologia() {
           </h2>
           <p className="mt-5 text-base leading-relaxed text-slate-600">
             L&apos;idrogeno verde nasce dividendo l&apos;acqua in idrogeno e ossigeno
-            usando elettricità rinnovabile. Il punto critico è la membrana, dove
-            avviene la reazione. Noi la abbiamo riprogettata da zero per renderla
-            più efficiente, più economica e più pulita.
+            usando elettricità rinnovabile. Il punto critico è la membrana. Noi
+            la abbiamo riprogettata da zero per renderla più efficiente, più
+            economica e più pulita.
           </p>
         </div>
 

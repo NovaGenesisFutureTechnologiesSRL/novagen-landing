@@ -1,7 +1,7 @@
 const stats = [
-  { value: '~36%', label: 'più economico del PEM' },
-  { value: 'PGM-free', label: 'senza metalli preziosi' },
-  { value: 'PFAS-free', label: 'senza fluoro' },
+  { label: 'Cost Efficient', value: '~36%', desc: 'più economico dei sistemi attuali' },
+  { label: 'High durability', value: 'PGM-free', desc: 'Polimero innovativo' },
+  { label: 'PFAS-free', value: '', desc: 'senza fluoro' },
 ]
 
 export default function Hero() {
@@ -34,13 +34,13 @@ export default function Hero() {
           </h1>
 
           <p className="mt-5 text-lg font-medium text-nova-green sm:text-xl">
-            Elettrolizzatori AEM di nuova generazione, senza fluoro né metalli
-            preziosi.
+            Elettrolizzatori AEM di nuova generazione, senza fluoro e ad alta
+            durabilità.
           </p>
 
           <p className="mt-5 max-w-xl text-base leading-relaxed text-nova-muted">
-            Progettiamo membrane e celle proprietarie che rendono la produzione
-            di idrogeno più semplice, più economica e più pulita. Un cuore
+            Progettiamo membrane proprietarie che rendono la produzione di
+            idrogeno più semplice, più economica e più pulita. Un cuore
             tecnologico pensato per scalare, dai laboratori agli impianti
             industriali.
           </p>
@@ -63,9 +63,14 @@ export default function Hero() {
           {/* Stat */}
           <dl className="mt-10 grid max-w-lg grid-cols-3 gap-4 border-t border-nova-border pt-6">
             {stats.map((s) => (
-              <div key={s.value}>
-                <dt className="text-xl font-bold text-white sm:text-2xl">{s.value}</dt>
-                <dd className="mt-1 text-xs leading-snug text-nova-muted">{s.label}</dd>
+              <div key={s.label}>
+                <p className="text-[0.7rem] font-semibold uppercase tracking-wide text-nova-green">
+                  {s.label}
+                </p>
+                {s.value && (
+                  <dt className="mt-1 text-xl font-bold text-white sm:text-2xl">{s.value}</dt>
+                )}
+                <dd className="mt-1 text-xs leading-snug text-nova-muted">{s.desc}</dd>
               </div>
             ))}
           </dl>

@@ -8,7 +8,7 @@ const cards = [
   },
   {
     icon: CloudDrizzle,
-    title: 'Cattura e riduzione CO₂',
+    title: 'Riduzione CO₂',
     text: 'La stessa tecnologia elettrochimica applicata alla conversione della CO₂ in prodotti utili, per chiudere il ciclo del carbonio.',
   },
   {
