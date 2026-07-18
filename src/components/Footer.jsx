@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 export default function Footer() {
   return (
     <footer className="border-t border-nova-border bg-nova-night">
@@ -15,12 +17,12 @@ export default function Footer() {
         </p>
 
         <nav aria-label="Note legali" className="flex items-center gap-6">
-          <a href="#" className="text-xs text-nova-muted transition-colors hover:text-white">
+          <Link to="/privacy" className="text-xs text-nova-muted transition-colors hover:text-white">
             Privacy
-          </a>
-          <a href="#" className="text-xs text-nova-muted transition-colors hover:text-white">
+          </Link>
+          <Link to="/cookie" className="text-xs text-nova-muted transition-colors hover:text-white">
             Cookie
-          </a>
+          </Link>
         </nav>
       </div>
     </footer>

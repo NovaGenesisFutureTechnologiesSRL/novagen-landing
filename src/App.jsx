@@ -1,30 +1,29 @@
-import { useState } from 'react'
-import Navbar from './components/Navbar'
-import Hero from './components/Hero'
-import Tecnologia from './components/Tecnologia'
-import Applicazioni from './components/Applicazioni'
-import ChiSiamo from './components/ChiSiamo'
-import CTA from './components/CTA'
-import ContactModal from './components/ContactModal'
-import Footer from './components/Footer'
+import { useEffect } from 'react'
+import { Routes, Route, useLocation } from 'react-router-dom'
+import Home from './pages/Home'
+import PrivacyPolicy from './pages/PrivacyPolicy'
+import CookiePolicy from './pages/CookiePolicy'
+import CookieBanner from './components/CookieBanner'
+
+// Riporta in cima alla pagina a ogni cambio rotta
+function ScrollToTop() {
+  const { pathname } = useLocation()
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [pathname])
+  return null
+}
 
 export default function App() {
-  const [modalOpen, setModalOpen] = useState(false)
-  const openModal = () => setModalOpen(true)
-  const closeModal = () => setModalOpen(false)
-
   return (
     <div className="min-h-screen bg-nova-night">
-      <Navbar />
-      <main>
-        <Hero />
-        <Tecnologia />
-        <Applicazioni />
-        <ChiSiamo />
-        <CTA onContact={openModal} />
-      </main>
-      <Footer />
-      <ContactModal open={modalOpen} onClose={closeModal} />
+      <ScrollToTop />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/privacy" element={<PrivacyPolicy />} />
+        <Route path="/cookie" element={<CookiePolicy />} />
+      </Routes>
+      <CookieBanner />
     </div>
   )
 }

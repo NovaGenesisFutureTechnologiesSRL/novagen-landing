@@ -17,7 +17,12 @@ export default function ContactModal({ open, onClose }) {
 
   const handleSend = () => {
     if (!valid) return
-    // Nessun backend in questa landing: simuliamo l'invio lato client.
+    // Nessun backend: l'invio avviene tramite il client di posta dell'utente (mailto).
+    const subject = `Richiesta di contatto — ${form.nome}`
+    const body = `Nome: ${form.nome}\nEmail: ${form.email}\n\n${form.messaggio}`
+    window.location.href = `mailto:it@novagentech.it?subject=${encodeURIComponent(
+      subject,
+    )}&body=${encodeURIComponent(body)}`
     setSent(true)
   }
 
