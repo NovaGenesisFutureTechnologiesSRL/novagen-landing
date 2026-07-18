@@ -1,40 +1,31 @@
 import { useState } from 'react'
 
 /*
-  Logo NovaGenesis.
-  Priorità: se esiste /brand/logo.png (lockup completo fornito dall'utente)
-  viene mostrato da solo. Altrimenti si usa l'icona vettoriale
-  /brand/logo-mark.svg affiancata al wordmark bianco "NOVAGENESIS"
-  (leggibile sullo sfondo scuro del sito). Fallback finale: quadratino gradient.
+  Logo NovaGenesis: icona + wordmark "NOVAGENESIS".
+  L'icona usa il file fornito /brand/logo.png (sfondo trasparente); in caso di
+  errore ripiega sull'icona vettoriale /brand/logo-mark.svg e, come ultima
+  spiaggia, sul quadratino gradient. Il wordmark bianco resta sempre leggibile
+  sullo sfondo scuro del sito.
 */
-export default function Logo({ imgClass = 'h-10 w-auto', markClass = 'h-9 w-9' }) {
-  const [pngFailed, setPngFailed] = useState(false)
-  const [svgFailed, setSvgFailed] = useState(false)
+const MARKS = ['/brand/logo.png', '/brand/logo-mark.svg']
 
-  if (!pngFailed) {
-    return (
-      <img
-        src="/brand/logo.png"
-        alt="NovaGenesis"
-        onError={() => setPngFailed(true)}
-        className={imgClass}
-      />
-    )
-  }
+export default function Logo({ markClass = 'h-10 w-auto' }) {
+  const [idx, setIdx] = useState(0)
+  const [failed, setFailed] = useState(false)
 
   return (
     <span className="flex items-center gap-2.5">
-      {svgFailed ? (
+      {failed ? (
         <span
-          className={`${markClass} rounded-lg bg-gradient-to-br from-nova-blue to-nova-green`}
+          className={`${markClass} aspect-square rounded-lg bg-gradient-to-br from-nova-blue to-nova-green`}
           aria-hidden="true"
         />
       ) : (
         <img
-          src="/brand/logo-mark.svg"
+          src={MARKS[idx]}
           alt=""
           aria-hidden="true"
-          onError={() => setSvgFailed(true)}
+          onError={() => (idx + 1 < MARKS.length ? setIdx(idx + 1) : setFailed(true))}
           className={markClass}
         />
       )}

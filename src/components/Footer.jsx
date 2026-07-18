@@ -6,7 +6,7 @@ export default function Footer() {
     <footer className="border-t border-nova-border bg-nova-night">
       <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-5 py-8 sm:flex-row sm:px-8">
         <div className="flex items-center text-white">
-          <Logo imgClass="h-8 w-auto" markClass="h-7 w-7" />
+          <Logo markClass="h-8 w-auto" />
         </div>
 
         <p className="text-center text-xs text-nova-muted">
