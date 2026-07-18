@@ -1,20 +1,22 @@
 import { useState } from 'react'
 
 /*
-  Logo NovaGenesis con fallback.
-  Mostra l'immagine /brand/logo.png se presente; in sua assenza (o errore di
-  caricamento) ripiega sul quadratino gradient + wordmark testuale, così il
-  sito resta integro anche prima che il file venga caricato.
+  Logo NovaGenesis.
+  Priorità: se esiste /brand/logo.png (lockup completo fornito dall'utente)
+  viene mostrato da solo. Altrimenti si usa l'icona vettoriale
+  /brand/logo-mark.svg affiancata al wordmark bianco "NOVAGENESIS"
+  (leggibile sullo sfondo scuro del sito). Fallback finale: quadratino gradient.
 */
-export default function Logo({ imgClass = 'h-9 w-auto', squareClass = 'h-8 w-8' }) {
-  const [errored, setErrored] = useState(false)
+export default function Logo({ imgClass = 'h-10 w-auto', markClass = 'h-9 w-9' }) {
+  const [pngFailed, setPngFailed] = useState(false)
+  const [svgFailed, setSvgFailed] = useState(false)
 
-  if (!errored) {
+  if (!pngFailed) {
     return (
       <img
         src="/brand/logo.png"
         alt="NovaGenesis"
-        onError={() => setErrored(true)}
+        onError={() => setPngFailed(true)}
         className={imgClass}
       />
     )
@@ -22,10 +24,20 @@ export default function Logo({ imgClass = 'h-9 w-auto', squareClass = 'h-8 w-8' 
 
   return (
     <span className="flex items-center gap-2.5">
-      <span
-        className={`${squareClass} rounded-lg bg-gradient-to-br from-nova-blue to-nova-green shadow-[0_0_18px_rgba(46,230,166,0.35)]`}
-        aria-hidden="true"
-      />
+      {svgFailed ? (
+        <span
+          className={`${markClass} rounded-lg bg-gradient-to-br from-nova-blue to-nova-green`}
+          aria-hidden="true"
+        />
+      ) : (
+        <img
+          src="/brand/logo-mark.svg"
+          alt=""
+          aria-hidden="true"
+          onError={() => setSvgFailed(true)}
+          className={markClass}
+        />
+      )}
       <span className="text-lg font-semibold tracking-tight">NOVAGENESIS</span>
     </span>
   )

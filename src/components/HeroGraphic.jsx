@@ -2,20 +2,23 @@ import { useState } from 'react'
 
 /*
   Grafica dell'Hero.
-  Mostra l'immagine della membrana /brand/membrana.png se presente; in sua
-  assenza (o errore) ripiega sulla grafica SVG a onde, così il sito resta
-  integro anche prima che l'immagine venga caricata.
+  Prova prima /brand/membrana.png (eventuale immagine fornita dall'utente),
+  poi l'illustrazione vettoriale /brand/membrana.svg; se nessuna è
+  disponibile ripiega sulla grafica SVG a onde inline. Il sito resta sempre
+  integro.
 */
-export default function HeroGraphic() {
-  const [errored, setErrored] = useState(false)
+const SOURCES = ['/brand/membrana.png', '/brand/membrana.svg']
 
-  if (!errored) {
+export default function HeroGraphic() {
+  const [idx, setIdx] = useState(0)
+
+  if (idx < SOURCES.length) {
     return (
       <div className="overflow-hidden rounded-2xl border border-nova-border bg-white shadow-2xl">
         <img
-          src="/brand/membrana.png"
+          src={SOURCES[idx]}
           alt="Schema della membrana AEM: gli ioni OH⁻ attraversano la membrana dal lato anodo al lato catodo"
-          onError={() => setErrored(true)}
+          onError={() => setIdx((i) => i + 1)}
           className="h-auto w-full"
         />
       </div>

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none" role="img" aria-label="NovaGenesis">
+  <!-- Metà sinistra: blu notte (lato anodo) -->
+  <path d="M60 6 L14 33 L14 87 L60 114 Z" fill="#1b3a8f"/>
+  <!-- Metà destra: verde (lato catodo) -->
+  <path d="M60 6 L106 33 L106 87 L60 114 Z" fill="#3fb54a"/>
+  <!-- Membrana centrale con rigonfiamento -->
+  <rect x="57" y="6" width="6" height="108" fill="#37a9e0"/>
+  <ellipse cx="60" cy="60" rx="9" ry="17" fill="#37a9e0"/>
+  <!-- Beaker sul lato blu -->
+  <path d="M31 41 L31 79 Q31 86 38 86 L45 86 Q49 86 49 80 L49 41" fill="none" stroke="#eaf3ff" stroke-width="3" stroke-linecap="round"/>
+  <path d="M31 63 L49 63 L49 80 Q49 86 44 86 L37 86 Q31 86 31 79 Z" fill="#37a9e0"/>
+  <circle cx="41" cy="52" r="3" fill="#7fd0f5"/>
+  <circle cx="46" cy="46" r="2" fill="#7fd0f5"/>
+  <circle cx="39" cy="72" r="2.4" fill="#eaf3ff"/>
+  <!-- Curva membrana sul lato verde -->
+  <path d="M79 35 C 71 55, 71 65, 79 85" fill="none" stroke="#eaf3ff" stroke-width="3" stroke-linecap="round"/>
+</svg>
