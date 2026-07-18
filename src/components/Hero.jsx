@@ -1,106 +1,133 @@
-import { ArrowRight, Play } from 'lucide-react'
+const stats = [
+  { value: '~36%', label: 'più economico del PEM' },
+  { value: 'PGM-free', label: 'senza metalli preziosi' },
+  { value: 'PFAS-free', label: 'senza fluoro' },
+]
 
-export default function Hero({ onContact }) {
+export default function Hero() {
   return (
     <section
-      id="top"
-      className="relative overflow-hidden border-b border-nova-border bg-nova-night"
+      id="hero"
+      className="relative overflow-hidden bg-nova-night pt-16 pb-20 sm:pt-20 sm:pb-28"
     >
-      {/* glow di sfondo */}
+      {/* Glow decorativi */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -right-40 -top-40 h-[500px] w-[500px] rounded-full bg-nova-electric/20 blur-[120px]"
+        className="pointer-events-none absolute -left-40 -top-24 h-80 w-80 rounded-full bg-nova-blue/20 blur-3xl"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute right-0 top-40 h-72 w-72 rounded-full bg-nova-green/10 blur-3xl"
       />
 
-      <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 py-20 sm:px-8 lg:grid-cols-2 lg:py-28">
+      <div className="mx-auto grid max-w-7xl items-center gap-14 px-5 sm:px-8 lg:grid-cols-2">
         {/* Colonna testo */}
-        <div className="text-left">
-          <p className="mb-5 inline-flex items-center rounded-full border border-nova-border bg-nova-night-2 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-nova-electric-2">
-            Tecnologia profonda. Impatto reale.
-          </p>
+        <div>
+          <span className="inline-flex items-center gap-2 rounded-full border border-nova-border bg-nova-panel px-3.5 py-1.5 text-xs font-semibold tracking-wide text-nova-green">
+            <span className="h-1.5 w-1.5 rounded-full bg-nova-green" aria-hidden="true" />
+            IDROGENO VERDE · TECNOLOGIA AEM
+          </span>
 
-          <h1 className="text-4xl font-semibold leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl">
-            L&apos;idrogeno verde
-            <br />
-            che alimenta il domani
+          <h1 className="mt-6 text-4xl font-bold leading-[1.1] tracking-tight text-white sm:text-5xl lg:text-6xl">
+            La membrana che sblocca
+            <br className="hidden sm:block" /> l&apos;idrogeno verde
           </h1>
 
-          <p className="mt-6 max-w-xl text-lg leading-relaxed text-nova-muted">
-            Novagenesis Future Technologies trasforma la ricerca deep-tech in
-            infrastrutture per l&apos;idrogeno verde: efficienti, scalabili e
-            sostenibili. Dalla scienza dei materiali alla piattaforma
-            intelligente.
+          <p className="mt-5 text-lg font-medium text-nova-green sm:text-xl">
+            Elettrolizzatori AEM di nuova generazione, senza fluoro né metalli
+            preziosi.
           </p>
 
-          <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-            <button
-              type="button"
-              onClick={onContact}
-              className="inline-flex items-center justify-center gap-2 rounded-lg bg-nova-electric px-6 py-3 text-sm font-semibold text-white shadow-[0_0_28px_rgba(59,91,255,0.45)] transition-colors hover:bg-nova-electric-2"
+          <p className="mt-5 max-w-xl text-base leading-relaxed text-nova-muted">
+            Progettiamo membrane e celle proprietarie che rendono la produzione
+            di idrogeno più semplice, più economica e più pulita. Un cuore
+            tecnologico pensato per scalare, dai laboratori agli impianti
+            industriali.
+          </p>
+
+          <div className="mt-8 flex flex-wrap gap-3">
+            <a
+              href="#contatti"
+              className="inline-flex items-center justify-center rounded-lg bg-nova-green px-6 py-3 text-sm font-semibold text-nova-night shadow-[0_0_24px_rgba(46,230,166,0.35)] transition-colors hover:bg-nova-green-2"
             >
-              Contattaci
-              <ArrowRight className="h-4 w-4" aria-hidden="true" />
-            </button>
+              Parla con noi
+            </a>
             <a
               href="#tecnologia"
-              className="inline-flex items-center justify-center gap-2 rounded-lg border border-nova-border bg-nova-night-2 px-6 py-3 text-sm font-semibold text-white transition-colors hover:border-nova-electric/50"
+              className="inline-flex items-center justify-center rounded-lg border border-nova-border px-6 py-3 text-sm font-semibold text-white transition-colors hover:border-nova-blue hover:text-nova-blue-2"
             >
-              <Play className="h-4 w-4" aria-hidden="true" />
               Scopri la tecnologia
             </a>
           </div>
+
+          {/* Stat */}
+          <dl className="mt-10 grid max-w-lg grid-cols-3 gap-4 border-t border-nova-border pt-6">
+            {stats.map((s) => (
+              <div key={s.value}>
+                <dt className="text-xl font-bold text-white sm:text-2xl">{s.value}</dt>
+                <dd className="mt-1 text-xs leading-snug text-nova-muted">{s.label}</dd>
+              </div>
+            ))}
+          </dl>
         </div>
 
-        {/* Colonna grafica a onde */}
+        {/* Colonna grafica: card scura con onde SVG */}
         <div className="relative">
-          <div className="relative overflow-hidden rounded-2xl border border-nova-border bg-nova-night-2 p-4 shadow-2xl">
-            <WaveGraphic />
+          <div className="rounded-2xl border border-nova-border bg-nova-panel p-6 shadow-2xl">
+            <svg
+              viewBox="0 0 400 280"
+              className="h-auto w-full"
+              role="img"
+              aria-label="Rappresentazione astratta del flusso di elettroni attraverso la membrana AEM"
+            >
+              <defs>
+                <linearGradient id="waveBlue" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0%" stopColor="#3b5bff" stopOpacity="0.2" />
+                  <stop offset="50%" stopColor="#3b5bff" stopOpacity="1" />
+                  <stop offset="100%" stopColor="#3b5bff" stopOpacity="0.2" />
+                </linearGradient>
+                <linearGradient id="waveGreen" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0%" stopColor="#2ee6a6" stopOpacity="0.2" />
+                  <stop offset="50%" stopColor="#2ee6a6" stopOpacity="1" />
+                  <stop offset="100%" stopColor="#2ee6a6" stopOpacity="0.2" />
+                </linearGradient>
+              </defs>
+
+              {/* Membrana centrale */}
+              <line x1="200" y1="20" x2="200" y2="260" stroke="#1b2540" strokeWidth="2" strokeDasharray="4 6" />
+
+              {/* Onde blu (lato anodo) */}
+              <path d="M20 70 C 80 40, 140 100, 200 70" fill="none" stroke="url(#waveBlue)" strokeWidth="2.5" />
+              <path d="M20 120 C 80 90, 140 150, 200 120" fill="none" stroke="url(#waveBlue)" strokeWidth="2.5" />
+              <path d="M20 170 C 80 140, 140 200, 200 170" fill="none" stroke="url(#waveBlue)" strokeWidth="2.5" />
+
+              {/* Onde verdi (lato catodo) */}
+              <path d="M200 90 C 260 60, 320 120, 380 90" fill="none" stroke="url(#waveGreen)" strokeWidth="2.5" />
+              <path d="M200 140 C 260 110, 320 170, 380 140" fill="none" stroke="url(#waveGreen)" strokeWidth="2.5" />
+              <path d="M200 190 C 260 160, 320 220, 380 190" fill="none" stroke="url(#waveGreen)" strokeWidth="2.5" />
+
+              {/* Punti / ioni */}
+              <circle cx="70" cy="60" r="4" fill="#3b5bff" />
+              <circle cx="130" cy="130" r="3" fill="#5b7bff" />
+              <circle cx="90" cy="175" r="3.5" fill="#3b5bff" />
+              <circle cx="270" cy="80" r="4" fill="#2ee6a6" />
+              <circle cx="330" cy="150" r="3" fill="#57f0bd" />
+              <circle cx="300" cy="195" r="3.5" fill="#2ee6a6" />
+              <circle cx="200" cy="140" r="5" fill="#ffffff" />
+            </svg>
+
+            <div className="mt-4 flex items-center justify-between text-xs text-nova-muted">
+              <span className="flex items-center gap-2">
+                <span className="h-2 w-2 rounded-full bg-nova-blue" aria-hidden="true" /> Anodo
+              </span>
+              <span>Membrana AEM</span>
+              <span className="flex items-center gap-2">
+                <span className="h-2 w-2 rounded-full bg-nova-green" aria-hidden="true" /> Catodo · H₂
+              </span>
+            </div>
           </div>
         </div>
       </div>
     </section>
-  )
-}
-
-function WaveGraphic() {
-  return (
-    <svg
-      viewBox="0 0 480 320"
-      className="h-auto w-full"
-      role="img"
-      aria-label="Grafica astratta a onde che rappresenta il flusso di energia dell'idrogeno verde"
-    >
-      <defs>
-        <linearGradient id="waveGrad" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0%" stopColor="#3b5bff" />
-          <stop offset="100%" stopColor="#5b7bff" />
-        </linearGradient>
-      </defs>
-      <rect width="480" height="320" fill="#0a0e1a" rx="12" />
-      {Array.from({ length: 9 }).map((_, i) => {
-        const y = 40 + i * 28
-        const opacity = 0.25 + i * 0.08
-        return (
-          <path
-            key={i}
-            d={`M0 ${y} C 120 ${y - 34}, 240 ${y + 34}, 480 ${y - 10}`}
-            fill="none"
-            stroke="url(#waveGrad)"
-            strokeWidth="2"
-            opacity={Math.min(opacity, 0.9)}
-          />
-        )
-      })}
-      {[[120, 96], [300, 150], [400, 210]].map(([cx, cy], i) => (
-        <circle key={i} cx={cx} cy={cy} r="4" fill="#5b7bff">
-          <animate
-            attributeName="opacity"
-            values="0.3;1;0.3"
-            dur={`${2 + i}s`}
-            repeatCount="indefinite"
-          />
-        </circle>
-      ))}
-    </svg>
   )
 }

@@ -2,35 +2,47 @@
 
 /* ============================================================
    Novagenesis Future Technologies — brand palette
-   Blu elettrico #3b5bff su blu notte #0a0e1a
+   Blu deep-tech #3b5bff  ·  Verde idrogeno #2ee6a6
+   Scuro base #0a0e1a  ·  Card scure #0d1424
    ============================================================ */
 :root {
-  --nova-electric: #3b5bff;   /* blu elettrico brand */
-  --nova-electric-2: #5b7bff; /* variante chiara */
-  --nova-night: #0a0e1a;      /* blu notte / sfondo dark */
-  --nova-night-2: #0f1424;    /* superfici scure */
-  --nova-panel: #131a2e;      /* card scure */
-  --nova-border: #1e2740;     /* bordi sottili dark */
-  --nova-light: #f6f8ff;      /* sfondo chiaro sezioni */
+  --nova-blue: #3b5bff;       /* blu deep-tech */
+  --nova-blue-2: #5b7bff;     /* variante chiara blu */
+  --nova-green: #2ee6a6;      /* verde idrogeno */
+  --nova-green-2: #57f0bd;    /* variante chiara verde */
+  --nova-night: #0a0e1a;      /* scuro base / sfondo dark */
+  --nova-panel: #0d1424;      /* card scure */
+  --nova-cta: #0d1526;        /* sfondo sezione CTA */
+  --nova-border: #1b2540;     /* bordi sottili dark */
+  --nova-light: #f4f7fb;      /* sezione Tecnologia */
+  --nova-light-2: #eef2f8;    /* sezione Applicazioni */
   --nova-ink: #0a0e1a;        /* testo scuro su chiaro */
-  --nova-muted: #8a93a8;      /* testo secondario */
+  --nova-muted: #8a93a8;      /* testo secondario su dark */
 }
 
-/* Rende disponibili i colori brand come utility Tailwind v4 */
+/* Espone i colori brand come utility Tailwind v4 (bg-nova-*, text-nova-*, ...) */
 @theme {
-  --color-nova-electric: #3b5bff;
-  --color-nova-electric-2: #5b7bff;
+  --color-nova-blue: #3b5bff;
+  --color-nova-blue-2: #5b7bff;
+  --color-nova-green: #2ee6a6;
+  --color-nova-green-2: #57f0bd;
   --color-nova-night: #0a0e1a;
-  --color-nova-night-2: #0f1424;
-  --color-nova-panel: #131a2e;
-  --color-nova-border: #1e2740;
-  --color-nova-light: #f6f8ff;
+  --color-nova-panel: #0d1424;
+  --color-nova-cta: #0d1526;
+  --color-nova-border: #1b2540;
+  --color-nova-light: #f4f7fb;
+  --color-nova-light-2: #eef2f8;
   --color-nova-ink: #0a0e1a;
   --color-nova-muted: #8a93a8;
 }
 
 html {
   scroll-behavior: smooth;
+}
+
+/* Compensa la navbar sticky quando si salta a una sezione via ancora */
+section[id] {
+  scroll-margin-top: 5rem;
 }
 
 body {
@@ -45,7 +57,7 @@ body {
 
 /* Focus visibile e accessibile su tutta la pagina */
 :focus-visible {
-  outline: 2px solid var(--nova-electric-2);
+  outline: 2px solid var(--nova-green);
   outline-offset: 2px;
   border-radius: 4px;
 }

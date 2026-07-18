@@ -10,6 +10,26 @@
       "preview": "PowerShell({\"command\":\"git init -b main 2>&1\\nif (-not (git config user)",
       "count": 1,
       "lastSeen": 1784377594429
+    },
+    "5ac537b1": {
+      "preview": "Bash({\"command\":\"cd \\\"c:/Users/giard/OneDrive/Desktop/novagen-lan)",
+      "count": 1,
+      "lastSeen": 1784386116374
+    },
+    "5f11c52a": {
+      "preview": "Bash({\"command\":\"cd \\\"c:/Users/giard/OneDrive/Desktop/novagen-lan)",
+      "count": 1,
+      "lastSeen": 1784386137569
+    },
+    "508c3b48": {
+      "preview": "Bash({\"command\":\"cd \\\"c:/Users/giard/OneDrive/Desktop/novagen-lan)",
+      "count": 1,
+      "lastSeen": 1784386191349
+    },
+    "ef0f0d32": {
+      "preview": "Bash({\"command\":\"cd \\\"c:/Users/giard/OneDrive/Desktop/novagen-lan)",
+      "count": 1,
+      "lastSeen": 1784386278970
     }
   },
   "editErrors": {}
