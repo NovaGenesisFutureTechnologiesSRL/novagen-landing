@@ -11,7 +11,7 @@ export default function Footer() {
         </div>
 
         <p className="text-center text-xs text-nova-muted">
-          © 2025 Novagenesis Future Technologies S.r.l.
+          © 2026 NovaGenesis — in costituzione
         </p>
 
         <nav aria-label="Note legali" className="flex items-center gap-6">
